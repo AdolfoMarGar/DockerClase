@@ -8,7 +8,7 @@
 
 	<?php
     //localhost:8000 para phpmyadmin
-       $db = new mysqli("localhost", "root", "root", "videoclub");
+       $db = new mysqli("mariadb", "root", "root", "videoclub");
        if($db->connect_error){
         die("Error en la conexion : ".$db->connect_error);
         }
