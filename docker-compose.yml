@@ -5,6 +5,7 @@ services:
     ports:
       - 9000:9000
     volumes:
+      - /ruta/hasta/custom.ini:/opt/bitnami/php/etc/conf.d/custom.ini
       - .:/app
   apache:
     image: bitnami/apache:latest
@@ -31,4 +32,3 @@ services:
 volumes:
   mariadb_data:
     driver: local
-
