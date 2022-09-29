@@ -5,8 +5,9 @@
     <h1>Ejercicio Simon Dice</h1>
   </head>
   <body>
-
-  <form action="/my-handling-form-page" method="post">
+  Cuidao aqui con el ecntype y tiene que ser post 100%
+  Buscar sino file upload post php method php
+  <form action="/my-handling-form-page" method="post" enctype="multipart/form-data">
     <ul>
       <li>
         <label for="titulo">Titulo:</label>
