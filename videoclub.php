@@ -5,16 +5,10 @@
     <h1>EJercicio videoclub simple</h1>
   </head>
   <body>
-
-	<?php
-    //localhost:8000 para phpmyadmin
-       $db = new mysqli("mariadb", "root", "root", "videoclub");
-       if($db->connect_error){
-        die("Error en la conexion : ".$db->connect_error);
-        }
-       $db->query("INSERT INTO persona (id, nombre, apellidos, fotografia) VALUES (2,'Leonardo','DiCaprio', 'https://media.vogue.es/photos/5fc4b046f19b6599598e2edd/master/w_960%2Cc_limit/GettyImages-542367236.jpg')");
-       
-	?>
+    <h1>Formularios para introducir datos a la base de datos:</h1></br>
+    <button name="formActor" role="link" onclick="window.location='/v_formActor.php'">Formulario Actor</button>
+    <button name="formPelicula" role="link" onclick="window.location='/v_formPelicula.php'">Formulario Pelicula</button>
+    <button name="formRelacion" role="link" onclick="window.location='/v_formRelacion.php'">Formulario Relacion</button>
 
   </body>
 </html>
