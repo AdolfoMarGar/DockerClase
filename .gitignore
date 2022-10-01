@@ -1,2 +1,4 @@
 docker-compose.yml
 composer.json
+custom.ini
+myapp.conf
