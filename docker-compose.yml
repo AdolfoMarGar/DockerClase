@@ -5,7 +5,7 @@ services:
     ports:
       - 9000:9000
     volumes:
-      - ./custom.ini:/opt/bitnami/php/etc/conf.d/custom.ini
+      - C:\Users\Adolfo\Documents\Docker\custom.ini:/opt/bitnami/php/etc/conf.d/custom.ini
       - .:/app
   apache:
     image: bitnami/apache:latest
