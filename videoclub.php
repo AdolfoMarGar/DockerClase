@@ -1,14 +1,86 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Ejercicios</title>
-    <h1>EJercicio videoclub simple</h1>
-  </head>
-  <body>
-    <h1>Formularios para introducir datos a la base de datos:</h1></br>
-    <button name="formActor" role="link" onclick="window.location='/v_formActor.php'">Formulario Actor</button>
-    <button name="formPelicula" role="link" onclick="window.location='/v_formPelicula.php'">Formulario Pelicula</button>
-    <button name="formRelacion" role="link" onclick="window.location='/v_formRelacion.php'">Formulario Relacion</button>
+<head>
+  <title>Ejercicios</title>
+  <h1>Videoclub</h1>
+</head>
+<body>
+  <?php
+    include 'SqlUtil.php';
+    $db = new SqlUtil();
+  ?>
 
-  </body>
+  <table border='1'>
+  <tr>
+      <th>Apellido:</th>
+      <th>Nombre:</th>
+      <th>Fotografia:</th>
+      
+    </tr>
+  <?php
+    $cursor = $db->getCursorActores();
+    while ($fila = $cursor->fetch_object()) {
+      echo "<tr>";
+      echo "<td>" . $fila->nombre . "</td>";
+      echo "<td>" . $fila->apellidos . "</td>";
+      echo "<td><img src ='$fila->fotografia' alt='Error carga imagen' width='150' height='150'></td>";
+      echo "</tr>";
+  }
+    ?>
+    
+  </table>
+  </br>
+  <button name="formActor" role="link" onclick="window.location='/v_formActor.php'">Añadir actor.</button>
+
+  </br></br>
+
+  <table border="1">
+    <?php
+    ?>
+    <tr>
+      <th>Titulo:</th>
+      <th>Genero:</th>
+      <th>Pais:</th>
+      <th>Año:</th>
+      <th>Cartel:</th>
+    </tr>
+    <?php
+    $cursor = $db->getCursorPeliculas();
+    while ($fila = $cursor->fetch_object()) {
+      echo "<tr>";
+      echo "<td>" . $fila->titulo . "</td>";
+      echo "<td>" . $fila->genero . "</td>";
+      echo "<td>" . $fila->pais . "</td>";
+      echo "<td>" . $fila->anio . "</td>";
+      echo "<td><img src ='$fila->cartel' alt='Error carga imagen' width='150' height='150'></td>";
+      echo "</tr>";
+    }
+    ?>
+    
+  </table>
+
+
+  </br> 
+  <button name="formPelicula" role="link" onclick="window.location='/v_formPelicula.php'">Añadir Pelicula.</button>
+  </br> 
+  </br> 
+
+
+  <table border="1">
+    <tr>
+      <th>Pelicula:</th>
+      <th>Actor:</th>
+    </tr>
+    <tr>
+    <th>Pelicula:</th>
+      <th>Actor:</th>
+    </tr>
+  </table>
+  </br> 
+  <button name="formRelacion" role="link" onclick="window.location='/v_formRelacion.php'">Añadir Relacion</button>
+
+    <?php 
+      $db->endDb();
+    ?>
+</body>
 </html>
