@@ -71,10 +71,16 @@
       <th>Pelicula:</th>
       <th>Actor:</th>
     </tr>
-    <tr>
-    <th>Pelicula:</th>
-      <th>Actor:</th>
-    </tr>
+    <?php
+    $cursor = $db->getCursorRelacion();
+    while ($fila = $cursor->fetch_object()) {
+      echo "<tr>";
+      echo "<td>" . $fila->nPelicula . "</td>";
+      echo "<td>" . $fila->nPersona . "</td>";
+      echo "</tr>";
+    }
+    ?>
+
   </table>
   </br> 
   <button name="formRelacion" role="link" onclick="window.location='/v_formRelacion.php'">Añadir Relacion</button>
