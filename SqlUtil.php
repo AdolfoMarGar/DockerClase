@@ -28,6 +28,10 @@
             $this->db->close();
         }
 
+        function insertPelicula($titulo, $genero, $pais, $anio, $img){
+            $this->db->query("INSERT INTO `pelicula` (`id`, `titulo`, `genero`, `pais`, `anio`, `cartel`) VALUES (NULL, '$titulo', '$genero', '$pais', '$anio', '$img');");
+        }
+
 
 
     }
