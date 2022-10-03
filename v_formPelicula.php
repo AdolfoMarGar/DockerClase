@@ -27,11 +27,49 @@
       </li>
       <li>
         <label for="img" >Imagen:</label>
-        <input type="file" id="img" name="peli_img">
+        <input type="img" id="img" name="peli_img">
+        <!--<input type="file" id="img" name="peli_img">-->
       </li>
     </ul>
   </form>
+  <script type="text/javascript">
+    function insertDatos(){
+
+      if(document.getElementById("titulo").value==null||document.getElementById("titulo").value==""){
+        alert("Introduce un titulo");
+      }else{
+        var titulo = document.getElementById("titulo").value;
+      }
+      alert(titulo);
+
+      if(document.getElementById("genero").value==null||document.getElementById("genero").value==""){
+        alert("Introduce un genero");
+      }else{
+        var genero = document.getElementById("genero").value;
+      }
+
+      if(document.getElementById("pais").value==null||document.getElementById("pais").value==""){
+        alert("Introduce un pais");
+      }else{
+        var pais = document.getElementById("pais").value;
+      }
+
+      if(document.getElementById("anio").value==null||document.getElementById("anio").value==""){
+        alert("Introduce un anio");
+      }else{
+        var anio = document.getElementById("anio").value;
+      }
+
+      if(document.getElementById("img").value==null||document.getElementById("img").value==""){
+        alert("Introduce una imagen");
+      }else{
+        var img = document.getElementById("img").value;
+      }
+    }
+    
+  </script>
   
+  <button name="Aniadir" onclick="insertDatos()">Añadir</button>
 
   <button name="Inicio" role="link" onclick="window.location='/videoclub.php'">Inicio</button>
 
