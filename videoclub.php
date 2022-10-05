@@ -12,8 +12,8 @@
 
   <table border='1'>
   <tr>
-      <th>Apellido:</th>
       <th>Nombre:</th>
+      <th>Apellido:</th>
       <th>Fotografia:</th>
       
     </tr>

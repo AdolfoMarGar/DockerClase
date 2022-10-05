@@ -2,10 +2,10 @@
 <html>
   <head>
     <title>Ejercicios</title>
-    <h1>Ejercicio Simon Dice</h1>
+    <h1>Formulario para añadir pelicula.</h1>
   </head>
   <body>
-  <script type="text/javascript">
+    <script type="text/javascript">
     function comprobarDatos(){
       var lleno = true;
 
@@ -53,8 +53,14 @@
   -->
   <?php
     include 'SqlUtil.php';
+    if(!isset($_REQUEST["do"])){
+      $do = "inicio";
+    } else {
+      $do = $_REQUEST["do"];
 
-    if(!isset($_REQUEST["titulo"])){
+
+    }
+    if($do=="inicio"){
       echo(
         '<form action="/v_formPelicula.php" method="post"  id="formulario"><!--enctype="multipart/form-data"-->
           <ul>
@@ -80,18 +86,21 @@
               <!--<input type="file" id="img" name="peli_img">-->
             </li>
           </ul>
+          <input type="hidden" id="do" value = "insertar">
         </form>'
       );
+
       
     }else{
-      $db = new SqlUtil();
-      $db->insertPelicula($_REQUEST["titulo"],$_REQUEST["genero"],$_REQUEST["pais"],$_REQUEST["anio"],$_REQUEST["img"],);
-      echo("
-       <script type='text/javascript'>
-       window.location.replace('/videoclub.php');
-       </script>
-      ");
-      
+      if($do=="insert"){
+        $db = new SqlUtil();
+        $db->insertPelicula($_REQUEST["titulo"],$_REQUEST["genero"],$_REQUEST["pais"],$_REQUEST["anio"],$_REQUEST["img"],);
+        echo("
+        <script type='text/javascript'>
+        window.location.replace('/videoclub.php');
+        </script>
+        ");
+      }
     }
   ?>
   

@@ -32,6 +32,14 @@
             $this->db->query("INSERT INTO `pelicula` (`id`, `titulo`, `genero`, `pais`, `anio`, `cartel`) VALUES (NULL, '$titulo', '$genero', '$pais', '$anio', '$img');");
         }
 
+        function insertActor($nombre, $apellido, $img){
+            $this->db->query("INSERT INTO `persona` (`id`, `nombre`, `apellidos`, `fotografia`) VALUES (NULL, '$nombre', '$apellido', '$img');");
+        }
+
+        function insertRelacion($pelicula, $persona){
+            $this->db->query("INSERT INTO `actuan` (`nPelicula`, `nPersona`) VALUES ('$pelicula', '$persona')");
+        }
+
 
 
     }
