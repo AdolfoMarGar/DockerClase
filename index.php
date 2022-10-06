@@ -11,7 +11,8 @@
   //Lo unico que debe hacer es llamar a los modelos para operar-obtener datos y a las views para la impresion de la pagina web en html
 
   /*
-
+  empezar siempre desde el controlador y a partir de alli ir realizando lo que necesita dicho controlador para que funcione correctamente
+  
 
   ejemplo controlador
 
