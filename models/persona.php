@@ -1,5 +1,5 @@
 <?php
-    include'./sqlUtil.php';
+    include_once('./models/sqlUtil.php');
     class Persona extends SqlUtil{
         function getAllPersona(){
             if ($result = $this->db->query("SELECT * FROM persona")) {

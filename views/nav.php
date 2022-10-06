@@ -1,1 +1,0 @@
-<!-- Aqui habria que hacer la vista de un menu para navegar a traves de las paginas. rollo boton vista tal, boton form tal etc-->

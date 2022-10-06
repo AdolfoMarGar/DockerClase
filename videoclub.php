@@ -21,9 +21,9 @@
     $cursor = $db->getCursorActores();
     while ($fila = $cursor->fetch_object()) {
       echo "<tr>";
-      echo "<td>" . $fila->nombre . "</td>";
-      echo "<td>" . $fila->apellidos . "</td>";
-      echo "<td><img src ='$fila->fotografia' alt='Error carga imagen' width='150' height='150'></td>";
+      echo "<th>" . $fila->nombre . "</th>";
+      echo "<th>" . $fila->apellidos . "</th>";
+      echo "<th><img src ='$fila->fotografia' alt='Error carga imagen' width='150' height='150'></th>";
       echo "</tr>";
   }
     ?>
@@ -48,11 +48,11 @@
     $cursor = $db->getCursorPeliculas();
     while ($fila = $cursor->fetch_object()) {
       echo "<tr>";
-      echo "<td>" . $fila->titulo . "</td>";
-      echo "<td>" . $fila->genero . "</td>";
-      echo "<td>" . $fila->pais . "</td>";
-      echo "<td>" . $fila->anio . "</td>";
-      echo "<td><img src ='$fila->cartel' alt='Error carga imagen' width='150' height='150'></td>";
+      echo "<th>" . $fila->titulo . "</th>";
+      echo "<th>" . $fila->genero . "</th>";
+      echo "<th>" . $fila->pais . "</th>";
+      echo "<th>" . $fila->anio . "</th>";
+      echo "<th><img src ='$fila->cartel' alt='Error carga imagen' width='150' height='150'></th>";
       echo "</tr>";
     }
     ?>
@@ -75,8 +75,8 @@
     $cursor = $db->getCursorRelacion();
     while ($fila = $cursor->fetch_object()) {
       echo "<tr>";
-      echo "<td>" . $fila->nPelicula . "</td>";
-      echo "<td>" . $fila->nPersona . "</td>";
+      echo "<th>" . $fila->nPelicula . "</th>";
+      echo "<th>" . $fila->nPersona . "</th>";
       echo "</tr>";
     }
     ?>
