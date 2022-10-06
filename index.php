@@ -5,7 +5,10 @@
   <h1>Videoclub</h1>
 </head>
 <body>
+
   <?php
+  //El index suele ser el controlador. Por ende no debe hacer echo o escribir nada en la web.
+  //Lo unico que debe hacer es llamar a los modelos para operar-obtener datos y a las views para la impresion de la pagina web en html
 
   /*
 
