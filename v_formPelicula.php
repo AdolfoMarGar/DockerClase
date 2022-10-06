@@ -3,63 +3,23 @@
   <head>
     <title>Ejercicios</title>
     <h1>Formulario para añadir pelicula.</h1>
+    <script src="./js/filtroPelicula.js"></script>
   </head>
   <body>
-    <script type="text/javascript">
-    function comprobarDatos(){
-      var lleno = true;
-
-      if(document.getElementById("titulo").value==null||document.getElementById("titulo").value==""){
-        alert("Introduce un titulo");
-        lleno = false;
-      }
-
-      if(document.getElementById("genero").value==null||document.getElementById("genero").value==""){
-        alert("Introduce un genero");
-        lleno = false;
-      }
-
-      if(document.getElementById("pais").value==null||document.getElementById("pais").value==""){
-        alert("Introduce un pais");
-        lleno = false;
-      }
-
-      if(document.getElementById("anio").value==null||document.getElementById("anio").value==""){
-        alert("Introduce un anio");
-        lleno = false;
-      }
-
-      if(document.getElementById("img").value==null||document.getElementById("img").value==""){
-        alert("Introduce una imagen");
-        lleno = false;
-      }
-      return lleno;
-
-    }
-    
-    function ejecutar(){
-      var pasa = comprobarDatos();
-      alert(pasa);
-      if(pasa ===true){
-        document.getElementById("formulario").submit();
-      }
-    }
-    
-  </script>
 
 <!--
   Cuidao aqui con el ecntype y tiene que ser post 100%
   Buscar sino file upload post php method php
   -->
   <?php
-    include 'SqlUtil.php';
+    include './Modelos/SqlUtil.php';
     if(!isset($_REQUEST["do"])){
       $do = "inicio";
     } else {
       $do = $_REQUEST["do"];
 
-
     }
+    echo("Justo antes del if $do");
     if($do=="inicio"){
       echo(
         '<form action="/v_formPelicula.php" method="post"  id="formulario"><!--enctype="multipart/form-data"-->
@@ -86,11 +46,9 @@
               <!--<input type="file" id="img" name="peli_img">-->
             </li>
           </ul>
-          <input type="hidden" id="do" value = "insertar">
+          <input type="hidden" id="do" value = "insert">
         </form>'
       );
-
-      
     }else{
       if($do=="insert"){
         $db = new SqlUtil();
