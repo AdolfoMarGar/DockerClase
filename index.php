@@ -17,13 +17,37 @@ switch ($do) {
     $db = new Persona("mariadb","root","root","videoclub"); 
     $datos["listaPersona"] = $db->getAllPersona();
     View::render("persona", "view.php",$datos);
+    $db->endDb();
 
     break;
+    
   case 'addPersona':
-    View::render("persona", "add.php");
+    $db = new Persona("mariadb","root","root","videoclub"); 
 
+    $nombre = $_REQUEST["nombre"] ?? "";
+    $apellido = $_REQUEST["apellido"] ?? "";
+    $fotografia = $_REQUEST["fotografia"] ?? "";
 
+    if($nombre!=""&&$apellido!=""&&$fotografia!=""){
+      $result = $db->insertActor($nombre, $apellido, $fotografia);
+    }else{
+      $result =0;
+    }
+
+    if ($result == 1) {
+      $datos["resDB"]=1;
+      View::render("persona", "add.php",$datos);
+    }else{
+      $datos["idPersona"]="";
+      $datos["nombre"]="";
+      $datos["apellido"]="";
+      $datos["fotografia"]="";
+      $datos["resDB"]=0;
+      View::render("persona", "add.php",$datos);
+    }
+    $db->endDb();
     break;
+
   case "deletePersona":
 
     break;

@@ -1,6 +1,6 @@
 <?php
 echo'
-    <form action="/" metdod="get">
+    <form action="/" method="post">
         <table border="1">
             <tr>
                 <td>Actores:</td>
@@ -8,7 +8,7 @@ echo'
                     <button type="submit" name="do" value="viewPersona">Ver actor.</button>
                 </td>
                 <td>
-                    <button type="submit" name="do" value="addPersona">Añadir actor.</button>
+                    <button type="submit" name="do" value="addPersona1">Añadir actor.</button>
                 </td>
                 <td>
                     <button type="submit" name="do" value="editPersona">Editar actor.</button>
@@ -20,16 +20,16 @@ echo'
             <tr>
                 <td>Peliculas:</td>
                 <td>
-                    <button type="submit" name="do" value="viewPelicula">Ver actor.</button>
+                    <button type="submit" name="do" value="viewPelicula">Ver pelicula.</button>
                 </td>
                 <td>
-                    <button type="submit" name="do" value="addPelicula" >Añadir actor.</button>
+                    <button type="submit" name="do" value="addPelicula" >Añadir pelicula.</button>
                 </td>
                 <td>
-                    <button type="submit" name="do" value="editPelicula" >Editar actor.</button>
+                    <button type="submit" name="do" value="editPelicula" >Editar pelicula.</button>
                 </td>
                 <td>
-                    <button type="submit" name="do" value="deletePelicula">Borrar actor.</button>
+                    <button type="submit" name="do" value="deletePelicula">Borrar pelicula.</button>
                 </td>
             </tr>
         </table>

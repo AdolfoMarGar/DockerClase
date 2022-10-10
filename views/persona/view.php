@@ -1,7 +1,7 @@
 <?php
 echo "
   <h1>Vistas actores.</h1>
-  <form action='/' metdod='post'>
+  <form action='/' method='post'>
     <table border='1'>
       <tr>
         <td>Nombre:</td>
